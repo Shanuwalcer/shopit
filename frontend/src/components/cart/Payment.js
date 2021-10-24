@@ -121,6 +121,7 @@ const Payment = ({ history }) => {
             alert.error(error.response.data.message)
         }
         
+        
     }
 
     return (

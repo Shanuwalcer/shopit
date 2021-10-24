@@ -83,7 +83,7 @@ function App() {
           <ProtectedRoute path="/success" component={OrderSuccess} />
           {stripeApiKey &&
             <Elements stripe={loadStripe(stripeApiKey)}>
-              <ProtectedRoute path="/payment" component={Payment} />
+              <ProtectedRoute path='/payment' component={Payment} />
             </Elements>
           }
 

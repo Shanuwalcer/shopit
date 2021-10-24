@@ -91,7 +91,7 @@ const ConfirmOrder = ({ history }) => {
 
                         <hr />
                         
-                        <button id="checkout_btn" className="btn btn-primary btn-block" onClick={processToPayment}>Proceed to Payment</button>
+                        <Link id="checkout_btn" className="btn btn-primary btn-block" onClick={processToPayment}>Proceed to Payment</Link>
                     </div>
                 </div>
 
