@@ -6,6 +6,7 @@ import MetaData from '../layout/MetaData'
 import { useAlert } from 'react-alert'
 import { useDispatch, useSelector } from 'react-redux'
 import { addItemToCart, removeItemFromCart } from '../../actions/cartActions'
+import { loadUser } from '../../actions/userActions'
 
 const Cart = ({ history }) => {
 
@@ -37,6 +38,7 @@ const Cart = ({ history }) => {
 
     const checkoutHandler = () => {
         history.push('/login?redirect=shipping')
+        
     }
 
     return (

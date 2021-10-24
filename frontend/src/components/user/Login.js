@@ -8,6 +8,7 @@ import { useAlert } from 'react-alert'
 import { useDispatch, useSelector } from 'react-redux'
 import { login, clearErrors } from '../../actions/userActions'
 
+
 const Login = ({ history, location }) => {
 
     const [email, setEmail] = useState('');
@@ -31,11 +32,12 @@ const Login = ({ history, location }) => {
             dispatch(clearErrors());
         }
 
-    }, [dispatch, alert, isAuthenticated, error, history])
+    }, [dispatch, alert, isAuthenticated, error, history, redirect])
 
     const submitHandler = (e) => {
         e.preventDefault();
         dispatch(login(email, password))
+           
     }
 
     return (

@@ -7,10 +7,14 @@ import CheckoutSteps from './CheckoutSteps'
 
 import { useSelector } from 'react-redux'
 
+
+
 const ConfirmOrder = ({ history }) => {
 
     const { cartItems, shippingInfo } = useSelector(state => state.cart)
-    const { user } = useSelector(state => state.auth)
+    const {  user } = useSelector(state => state.auth)
+
+    
 
     // Calculate Order Prices
     const itemsPrice = cartItems.reduce((acc, item) => acc + item.price * item.quantity, 0)
@@ -26,10 +30,18 @@ const ConfirmOrder = ({ history }) => {
             totalPrice
         }
 
-        sessionStorage.setItem('orderInfo', JSON.stringify(data))
+        sessionStorage.setItem('orderInfo', JSON.stringify(data));
 
-        history.push('/payment')
+        
+
+        history.push('/payment');
+       
     }
+
+    
+    
+
+    
 
     return (
         <Fragment>
@@ -91,7 +103,7 @@ const ConfirmOrder = ({ history }) => {
 
                         <hr />
                         
-                        <Link id="checkout_btn" className="btn btn-primary btn-block" onClick={processToPayment}>Proceed to Payment</Link>
+                        <button id="checkout_btn" className="btn btn-primary btn-block" onClick={processToPayment}>Proceed to Payment</button>
                     </div>
                 </div>
 

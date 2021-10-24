@@ -52,12 +52,13 @@ import { loadStripe } from '@stripe/stripe-js'
 function App() {
 
   const [stripeApiKey, setStripeApiKey] = useState('');
+  
 
   useEffect(() => {
     store.dispatch(loadUser())
 
-    async function getStripApiKey() {
-      const { data } = await axios.get('/api/v1/stripeapi');
+     async function getStripApiKey() {
+       const { data } = await axios.get('/api/v1/stripeapi');
 
       setStripeApiKey(data.stripeApiKey)
     }
@@ -83,7 +84,7 @@ function App() {
           <ProtectedRoute path="/success" component={OrderSuccess} />
           {stripeApiKey &&
             <Elements stripe={loadStripe(stripeApiKey)}>
-              <ProtectedRoute path='/payment' component={Payment} />
+              <ProtectedRoute path='/payment' component={Payment} exact/>
             </Elements>
           }
 

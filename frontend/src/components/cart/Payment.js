@@ -2,7 +2,7 @@ import React, { Fragment, useEffect } from 'react'
 
 import MetaData from '../layout/MetaData'
 import CheckoutSteps from './CheckoutSteps'
-import { REMOVE_ITEM_CART } from '../../constants/cartConstants'
+
 
 import { useAlert } from 'react-alert'
 import { useDispatch, useSelector } from 'react-redux'
@@ -30,18 +30,19 @@ const Payment = ({ history }) => {
     const elements = useElements();
     const dispatch = useDispatch();
 
-    const { user } = useSelector(state => state.auth)
+    const { isAuthenticated, user } = useSelector(state => state.auth)
     const { cartItems, shippingInfo } = useSelector(state => state.cart);
     const { error } = useSelector(state => state.newOrder)
 
     useEffect(() => {
+
 
         if (error) {
             alert.error(error)
             dispatch(clearErrors())
         }
 
-    }, [dispatch, alert, error])
+    }, [dispatch, alert, error,isAuthenticated])
 
     const order = {
         orderItems: cartItems,

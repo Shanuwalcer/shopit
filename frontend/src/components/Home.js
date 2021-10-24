@@ -40,6 +40,7 @@ const Home = ({ match }) => {
     const dispatch = useDispatch();
 
     const { loading, products, error, productsCount, resPerPage, filteredProductsCount } = useSelector(state => state.products)
+    const { isAuthenticated } = useSelector(state => state.auth);
 
     const keyword = match.params.keyword
 
@@ -51,7 +52,7 @@ const Home = ({ match }) => {
         dispatch(getProducts(keyword, currentPage, price, category, rating));
 
 
-    }, [dispatch, alert, error, keyword, currentPage, price, category, rating])
+    }, [dispatch, alert, error, keyword, currentPage, price, category, rating,isAuthenticated])
 
     function setCurrentPageNo(pageNumber) {
         setCurrentPage(pageNumber)
