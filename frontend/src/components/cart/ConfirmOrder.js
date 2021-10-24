@@ -2,6 +2,7 @@ import React, { Fragment } from 'react'
 import { Link } from 'react-router-dom'
 
 import MetaData from '../layout/MetaData'
+
 import CheckoutSteps from './CheckoutSteps'
 
 import { useSelector } from 'react-redux'
@@ -17,7 +18,7 @@ const ConfirmOrder = ({ history }) => {
     const taxPrice = Number((0.05 * itemsPrice).toFixed(2))
     const totalPrice = (itemsPrice + shippingPrice + taxPrice).toFixed(2)
 
-    const processToPayment = () => {
+    const processToPayment =  async () => {
         const data = {
             itemsPrice: itemsPrice.toFixed(2),
             shippingPrice,
@@ -26,6 +27,7 @@ const ConfirmOrder = ({ history }) => {
         }
 
         sessionStorage.setItem('orderInfo', JSON.stringify(data))
+
         history.push('/payment')
     }
 
@@ -88,6 +90,7 @@ const ConfirmOrder = ({ history }) => {
                         <p>Total: <span className="order-summary-values"><i className="fa fa-inr" >{totalPrice}</i></span></p>
 
                         <hr />
+                        
                         <button id="checkout_btn" className="btn btn-primary btn-block" onClick={processToPayment}>Proceed to Payment</button>
                     </div>
                 </div>

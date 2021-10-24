@@ -79,7 +79,7 @@ const Register = ({ history }) => {
                         <h1 className="mb-3">Register</h1>
 
                         <div className="form-group">
-                            <label htmlFor="email_field">Name *</label>
+                            <label htmlFor="email_field">Name</label>
                             <input
                                 type="name"
                                 id="name_field"
@@ -91,7 +91,7 @@ const Register = ({ history }) => {
                         </div>
 
                         <div className="form-group">
-                            <label htmlFor="email_field">Email *</label>
+                            <label htmlFor="email_field">Email</label>
                             <input
                                 type="email"
                                 id="email_field"
@@ -103,7 +103,7 @@ const Register = ({ history }) => {
                         </div>
 
                         <div className="form-group">
-                            <label htmlFor="password_field">Password *</label>
+                            <label htmlFor="password_field">Password</label>
                             <input
                                 type="password"
                                 id="password_field"
@@ -115,7 +115,7 @@ const Register = ({ history }) => {
                         </div>
 
                         <div className='form-group'>
-                            <label htmlFor='avatar_upload'>Avatar *</label>
+                            <label htmlFor='avatar_upload'>Avatar</label>
                             <div className='d-flex align-items-center'>
                                 <div>
                                     <figure className='avatar mr-3 item-rtl'>
@@ -132,11 +132,11 @@ const Register = ({ history }) => {
                                         name='avatar'
                                         className='custom-file-input'
                                         id='customFile'
-                                        accept="images/*"
+                                        accept="iamges/*"
                                         onChange={onChange}
                                     />
                                     <label className='custom-file-label' htmlFor='customFile'>
-                                        Choose Avatar 
+                                        Choose Avatar
                                     </label>
                                 </div>
                             </div>
@@ -158,4 +158,4 @@ const Register = ({ history }) => {
     )
 }
 
-export default Register
+export default Register;
