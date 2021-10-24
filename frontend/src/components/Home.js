@@ -85,7 +85,7 @@ const Home = ({ match }) => {
                                                 min={1}
                                                 max={1000}
                                                 defaultValue={[1, 1000]}
-                                                tipFormatter={value => `$${value}`}
+                                                tipFormatter={value => <i className="fa fa-inr">{value}</i>}
                                                 tipProps={{
                                                     placement: "top",
                                                     visible: true
