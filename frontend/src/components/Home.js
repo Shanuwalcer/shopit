@@ -79,8 +79,8 @@ const Home = ({ match }) => {
                                         <div className="px-5">
                                             <Range
                                                 marks={{
-                                                    1: `$1`,
-                                                    1000: `$1000`
+                                                    1: <i className="fa fa-inr">1</i>,
+                                                    1000: <i className="fa fa-inr">1000</i>
                                                 }}
                                                 min={1}
                                                 max={1000}
