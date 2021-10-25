@@ -1,4 +1,5 @@
 const User = require('../models/user');
+require('dotenv').config({ path: 'backend/config/config.env' })
 
 const ErrorHandler = require('../utils/errorHandler');
 const catchAsyncErrors = require('../middlewares/catchAsyncErrors');
